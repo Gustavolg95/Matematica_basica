@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceitos — Matemática Básica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Matemática Básica</h1>
+    <p>Frações · MDC/MMC · Potenciação &amp; Radiciação · Equação do 2º grau</p>
+  </header>
+
+  <nav id="nav"></nav>
+
+  <section id="fracoes" class="topic">
+    <h2 class="topic-title">Frações — as 4 operações</h2>
+
+    <div class="card">
+      <span class="macete-tag">Soma / Subtração</span>
+      <h3>Denominadores iguais → só mexe em cima</h3>
+      <p>Mesmo denominador: soma ou subtrai os numeradores e repete o denominador.</p>
+      <div class="formula">2/5 + 1/5 = 3/5</div>
+      <p>Denominadores diferentes: tire o MMC dos denominadores <em>ou</em> use o macete da multiplicação cruzada — funciona sempre, mesmo sem achar o MMC:</p>
+      <div class="formula">a/b + c/d = (a·d + b·c) / (b·d)</div>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Multiplicação</span>
+      <h3>"Multiplica reto"</h3>
+      <p>Numerador vezes numerador, denominador vezes denominador. Não precisa de denominador comum.</p>
+      <div class="formula">a/b × c/d = (a·c) / (b·d)</div>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Divisão</span>
+      <h3>"Copia, inverte e multiplica"</h3>
+      <p>Mantém a primeira fração igual, inverte a segunda (numerador vira denominador) e multiplica.</p>
+      <div class="formula">a/b ÷ c/d = a/b × d/c</div>
+    </div>
+
+    <div class="card">
+      <h3>Erro mais comum:</h3>
+      <p>Simplifique sempre no final dividindo numerador e denominador pelo mesmo número. Se a fração puder virar número inteiro ou mais simples, transforme.</p>
+    </div>
+
+    <h3 class="topic-title" style="font-size:1.4rem;">Fixando (clique para virar)</h3>
+    <div class="flip-grid" id="grid-fracoes"></div>
+  </section>
+
+  <section id="mdcmmc" class="topic">
+    <h2 class="topic-title">MDC e MMC</h2>
+
+    <div class="card">
+      <span class="macete-tag">Regra de bolso</span>
+      <h3>MDC = o que os números TÊM em comum (menor)</h3>
+      <p>MMC = o menor número que é múltiplo de TODOS (maior)</p>
+      <p>Se a questão fala em "repartir em grupos iguais", "maior pedaço possível", "simplificar" → é MDC.<br>
+      Se fala em "coincidir de novo", "acontecer juntos", "menor tempo/quantidade comum" → é MMC.</p>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Como calcular</span>
+      <h3>Fatoração simultânea</h3>
+      <p>Fatore os números ao mesmo tempo, dividindo por primos (2, 3, 5, 7...):</p>
+      <ul>
+        <li><strong>MMC:</strong> divida todos os números pelo mesmo primo sempre que possível (se um não for divisível, repete ele). Multiplique todos os primos usados no final.</li>
+        <li><strong>MDC:</strong> só pode dividir quando o primo divide <em>todos</em> os números ao mesmo tempo. Multiplique apenas esses primos comuns.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Macete de ouro</span>
+      <h3>MDC × MMC = produto dos dois números</h3>
+      <div class="formula">MDC(a,b) × MMC(a,b) = a × b</div>
+      <p>Ache um dos dois primeiro (o mais fácil) e descubra o outro por divisão — economiza tempo de prova.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atalho para MDC de 2 números: Algoritmo de Euclides</h3>
+      <p>Divide o maior pelo menor. Pega o resto. Divide o divisor anterior por esse resto. Repete até o resto ser 0 — o último divisor é o MDC.</p>
+    </div>
+
+    <h3 class="topic-title" style="font-size:1.4rem;">Fixando</h3>
+    <div class="flip-grid" id="grid-mdcmmc"></div>
+  </section>
+
+  <section id="potenciacao" class="topic">
+    <h2 class="topic-title">Potenciação e Radiciação</h2>
+
+    <div class="card">
+      <span class="macete-tag">Propriedades de potência (base igual)</span>
+      <ul>
+        <li>Multiplicação → <strong>soma</strong> os expoentes: <span class="formula">aᵐ · aⁿ = aᵐ⁺ⁿ</span></li>
+        <li>Divisão → <strong>subtrai</strong> os expoentes: <span class="formula">aᵐ ÷ aⁿ = aᵐ⁻ⁿ</span></li>
+        <li>Potência de potência → <strong>multiplica</strong> os expoentes: <span class="formula">(aᵐ)ⁿ = aᵐ·ⁿ</span></li>
+        <li>Expoente 0 → sempre dá 1 (a ≠ 0): <span class="formula">a⁰ = 1</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Expoente negativo</span>
+      <h3>"Inverte e vira positivo"</h3>
+      <div class="formula">a⁻ⁿ = 1/aⁿ &nbsp;&nbsp;|&nbsp;&nbsp; (a/b)⁻ⁿ = (b/a)ⁿ</div>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Radiciação = potência ao contrário</span>
+      <h3>Expoente fracionário vira raiz</h3>
+      <div class="formula">a^(m/n) = ⁿ√(aᵐ)</div>
+      <p>Para simplificar raiz: decomponha o número em fatores primos e agrupe em grupos do tamanho do índice da raiz.</p>
+      <div class="formula">√72 = √(2³·3²) = √(2²·2·3²) = 2·3·√2 = 6√2</div>
+    </div>
+
+    <div class="card">
+      <h3>Erro mais comum</h3>
+      <p>(a+b)² ≠ a² + b². É sempre a² + 2ab + b² (produto notável) — decore esse, cai muito.</p>
+    </div>
+
+    <h3 class="topic-title" style="font-size:1.4rem;">Fixando</h3>
+    <div class="flip-grid" id="grid-potenciacao"></div>
+  </section>
+
+  <section id="segundograu" class="topic">
+    <h2 class="topic-title">Equação do 2º grau</h2>
+
+    <div class="card">
+      <span class="macete-tag">Forma geral</span>
+      <div class="formula">ax² + bx + c = 0</div>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Bhaskara</span>
+      <h3>Fórmula completa</h3>
+      <div class="formula">Δ = b² − 4ac</div>
+      <div class="formula">x = (−b ± √Δ) / 2a</div>
+      <p>Δ > 0 → duas raízes diferentes; Δ = 0 → uma raiz (raiz dupla); Δ < 0 → sem raízes reais.</p>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Macete: Soma e Produto</span>
+      <h3>Quando a = 1, nem precisa de Bhaskara</h3>
+      <p>Procure dois números que <strong>somados</strong> deem −b e <strong>multiplicados</strong> deem c. Muito mais rápido em prova.</p>
+      <div class="formula">x² − 5x + 6 = 0 → números: 2 e 3 (2+3=5, 2·3=6)</div>
+    </div>
+
+    <div class="card">
+      <span class="macete-tag">Equações incompletas</span>
+      <ul>
+        <li><strong>c = 0</strong> (falta o termo independente): coloque x em evidência → <span class="formula">x(ax+b)=0</span> → x=0 ou x=−b/a</li>
+        <li><strong>b = 0</strong> (falta o termo com x): isole x² → <span class="formula">x² = −c/a</span> → tire a raiz dos dois lados</li>
+      </ul>
+    </div>
+
+    <h3 class="topic-title" style="font-size:1.4rem;">Fixando</h3>
+    <div class="flip-grid" id="grid-segundograu"></div>
+  </section>
+
+  <section id="videos" class="topic">
+    <h2 class="topic-title">Vídeos rápidos recomendados</h2>
+    <div class="card">
+      <p>Curtos e direto ao ponto:</p>
+      <ul id="video-list"></ul>
+    </div>
+  </section>
+
+  <section id="quiz" class="topic">
+    <h2 class="topic-title">Quiz relâmpago</h2>
+    <div id="quiz-area"></div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
