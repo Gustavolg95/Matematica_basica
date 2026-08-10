@@ -2,7 +2,7 @@
 
 Site de revisão rápida de matemática básica, com resumos, macetes, flashcards e um quiz interativo.
 
-🔗 **Acesse:** [Matemática Básica - conceitos](https://gustavolg95.github.io/Matematica_basica/)
+**Acesse o site:** [Conceitos - Matemática Básica](https://gustavolg95.github.io/Matematica_basica/)
 
 ## Conteúdo
 
